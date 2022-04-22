@@ -2,7 +2,7 @@
 
 namespace Kasyno.Entities
 {
-    class AppUser
+    public class AppUser
     {
         public int Id { get; set; }
         public string Login { get; set; }

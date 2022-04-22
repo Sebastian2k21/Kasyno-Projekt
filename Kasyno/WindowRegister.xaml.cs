@@ -95,8 +95,8 @@ namespace Kasyno
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
             string username = TbUsername.Text;
-            string password = TbPassword.Text;
-            string confirmPassword = TbConfirmPassword.Text;
+            string password = TbPassword.Password;
+            string confirmPassword = TbConfirmPassword.Password;
             string firstName = TbFirstName.Text;
             string surname = TbSurname.Text;
             string initialDeposit = TbInitialDeposit.Text;
@@ -106,6 +106,8 @@ namespace Kasyno
                 string hashedPassword = Encryptor.Sha256(password);
                 double deposit = Convert.ToDouble(initialDeposit);
                 Register(username, hashedPassword, firstName, surname, deposit);
+                MessageBox.Show("Registration completed!", "Success", MessageBoxButton.OK);
+                this.Close();
             }
         }
     }

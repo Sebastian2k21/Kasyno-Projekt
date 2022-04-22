@@ -1,18 +1,10 @@
-﻿using Kasyno.Interfaces;
+﻿using Kasyno.Entities;
+using Kasyno.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Kasyno
 {
@@ -23,13 +15,14 @@ namespace Kasyno
         private const string LOG_FILE_NAME = "logs.txt";
         public User User1 { get; set; }
         public List<GameLog> Logs { get; set; }
-        public WindowRoulette(ref User user1)
+        public AppUser User { get; set; }
+        public WindowRoulette(AppUser user)
         {
-            User1 = user1;
+            User = user;
             Logs = InitializeLogs();
 
             InitializeComponent();
-            LblMoney.Content = $"{user1.Money.ToString()}$";
+            LblMoney.Content = $"{User1.Money.ToString()}$";
         }
 
         #region Interface implementation

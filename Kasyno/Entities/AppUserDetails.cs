@@ -1,6 +1,6 @@
 ﻿namespace Kasyno.Entities
 {
-    class AppUserDetails
+    public class AppUserDetails
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

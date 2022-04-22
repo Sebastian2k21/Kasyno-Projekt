@@ -12,14 +12,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/bakcground2.jpg"/>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Left" Margin="158,78,0,0" Text="Username:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
-        <TextBlock HorizontalAlignment="Left" Margin="158,175,0,0" Text="Deposit:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
-        <TextBox x:Name="TbUsername" HorizontalAlignment="Left" Margin="340,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="36"/>
-        <TextBox x:Name="TbDeposit" HorizontalAlignment="Left" Margin="305,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="36"/>
         <RadioButton x:Name="BtnChoiceRoulette" Content="Roulette" HorizontalAlignment="Left" Margin="305,278,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontWeight="Bold" FontSize="24" Foreground="#FFF7F7F7"/>
         <RadioButton x:Name="BtnChoiceSlot" Content="Slot" HorizontalAlignment="Left" Margin="431,278,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontWeight="Bold" FontSize="24" Foreground="#FFF7F7F7"/>
         <Button x:Name="BtnStart" Content="Start" HorizontalAlignment="Left" Margin="484,337,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="235" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnStart_Click"/>
         <Button x:Name="BtnStatistics" Content="Show statistics" HorizontalAlignment="Left" Margin="71,337,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="329" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnStatistics_Click"/>
+        <TextBlock x:Name="LblLogin" HorizontalAlignment="Left" Margin="158,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor=""/>
+        <Image x:Name="ImgProfile" HorizontalAlignment="Left" Height="128" Margin="10,10,0,0" VerticalAlignment="Top" Width="128" Source="/Resources/profile.png" MouseLeftButtonDown="ImgProfile_MouseLeftButtonDown"/>
 
     </Grid>
 </Window>

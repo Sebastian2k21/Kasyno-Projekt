@@ -1,6 +1,6 @@
 ﻿namespace Kasyno.Entities
 {
-    class History
+    public class History
     {
         public int Id { get; set; }
         public double BetAmount { get; set; }
