@@ -1,0 +1,24 @@
+﻿<Window x:Class="Kasyno.WindowAuthor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kasyno"
+        mc:Ignorable="d"
+        Title="Author info" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/bakcground2.jpg"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" Margin="14,41,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,89,0,0" Text="Surname:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" RenderTransformOrigin="0.497,0.82"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,139,0,0" Text="Subject:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <Button x:Name="BtnBack" Content="Back to main menu" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" FontSize="36" Height="93" Width="419" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnBack_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="87,41,0,0" Text="Sebastian" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,89,0,0" Text="Żądło" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor=""/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,139,0,0" Text="Wprowadzenie do programowania" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor=""/>
+
+    </Grid>
+</Window>
