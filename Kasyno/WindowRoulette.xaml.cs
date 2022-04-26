@@ -96,11 +96,11 @@ namespace Kasyno
 
         public void ShowStatistics()
         {
-            WindowStatistics window = new WindowStatistics(Logs, GAME_NAME);
+            /*WindowStatistics window = new WindowStatistics(Logs, GAME_NAME);
 
             this.Hide();
             window.ShowDialog();
-            this.ShowDialog();
+            this.ShowDialog();*/
         }
 
         #endregion

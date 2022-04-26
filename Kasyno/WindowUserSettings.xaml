@@ -10,8 +10,8 @@
         ResizeMode="NoResize">
     <Grid>
         <Button x:Name="BtnBack" Content="Back to entrance" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="396" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnBack_Click"/>
-        <Button x:Name="BtnDeposit" Content="Make a deposit" HorizontalAlignment="Center" Margin="0,202,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="396" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnBack_Click"/>
-        <Button x:Name="BtnPassword" Content="Set new password" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="396" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnBack_Click"/>
+        <Button x:Name="BtnDeposit" Content="Make a deposit" HorizontalAlignment="Center" Margin="0,202,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="396" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnDeposit_Click"/>
+        <Button x:Name="BtnPassword" Content="Set new password" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="396" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnPassword_Click"/>
         <TextBlock x:Name="LblLogin" HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="36" FontWeight="Normal" FontFamily="Times New Roman" Cursor="" Width="356" TextAlignment="Center"/>
 
     </Grid>

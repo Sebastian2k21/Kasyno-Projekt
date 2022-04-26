@@ -76,7 +76,7 @@ namespace Kasyno
                 WindowEntry window = new WindowEntry(user);
                 this.Hide();
                 window.ShowDialog();
-                this.Close();
+                this.ShowDialog();
             }
         }
 
