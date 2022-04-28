@@ -33,8 +33,9 @@ namespace Kasyno
             LblCenter.Content = center.ToString();
 
             double bet = Convert.ToDouble(TbBet.Text);
+            bool isGameWon = IsGameWon(left, center, right);
 
-            if(IsGameWon(left, center, right))
+            if (isGameWon)
             {
                 User.AppUserDetails.Balance = User.AppUserDetails.Balance + (bet * 10);
                 MessageBox.Show($"You have won {bet}$!", "WIN", MessageBoxButton.OK);
@@ -54,7 +55,7 @@ namespace Kasyno
                 AppUserId = User.Id,
                 GameId = 2,
                 BetAmount = bet,
-                IsWon = true,
+                IsWon = isGameWon,
             };
 
             context.History.Add(history);

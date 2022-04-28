@@ -1,8 +1,8 @@
 ﻿using Kasyno.Entities;
 using Kasyno.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 
@@ -10,19 +10,14 @@ namespace Kasyno
 {
     public partial class WindowRoulette : Window, IGame, IStatistics
     {
-        private const string GAME_NAME = "Roulette";
-
-        private const string LOG_FILE_NAME = "logs.txt";
-        public User User1 { get; set; }
-        public List<GameLog> Logs { get; set; }
+        private readonly CasinoDbContext context = new CasinoDbContext();
         public AppUser User { get; set; }
         public WindowRoulette(AppUser user)
         {
             User = user;
-            Logs = InitializeLogs();
 
             InitializeComponent();
-            LblMoney.Content = $"{User1.Money.ToString()}$";
+            LblMoney.Content = $"{User.AppUserDetails.Balance}$";
         }
 
         #region Interface implementation
@@ -56,38 +51,35 @@ namespace Kasyno
 
                 // checks if user won
                 IsGameWon(number, option);
-
-                SaveStatisticsToFile();
             }
         }
 
         public bool CheckUserBalance()
         {
-            try
-            {
-                if (String.IsNullOrWhiteSpace(TbBet.Text))
-                {
-                    throw new Exception("You have to a bet value");
-                }
+            User = context.Users.Include(u => u.AppUserDetails).FirstOrDefault(u => u.Id == User.Id);
 
-                if (Convert.ToDouble(TbBet.Text) <= 0) // if bet is less or equal 0
-                {
-                    throw new Exception("Your bet has to be higher than 0");
-                }
-
-                if (User1.Money - Convert.ToDouble(TbBet.Text) < 0)
-                {
-                    throw new Exception("You do not have enough money!");
-                }
-            }
-            catch (FormatException ex)
+            if (String.IsNullOrWhiteSpace(TbBet.Text))
             {
-                MessageBox.Show("Enter valid numerical value!", "Error", MessageBoxButton.OK);
+                MessageBox.Show("Bet field cannot be empty!", "Error", MessageBoxButton.OK);
                 return false;
             }
-            catch (Exception ex)
+
+            double betAmount = 0;
+            if (!Double.TryParse(TbBet.Text, out betAmount))
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK);
+                MessageBox.Show("Bet field must be filled with numerical value!", "Error", MessageBoxButton.OK);
+                return false;
+            }
+
+            if (betAmount <= 0)
+            {
+                MessageBox.Show("You cannot bet less or equal 0$", "Error", MessageBoxButton.OK);
+                return false;
+            }
+
+            if (User.AppUserDetails.Balance - betAmount < 0)
+            {
+                MessageBox.Show("You do not have enough money!", "Error", MessageBoxButton.OK);
                 return false;
             }
 
@@ -96,42 +88,10 @@ namespace Kasyno
 
         public void ShowStatistics()
         {
-            /*WindowStatistics window = new WindowStatistics(Logs, GAME_NAME);
-
+            WindowStatistics window = new WindowStatistics(User, 1);
             this.Hide();
             window.ShowDialog();
-            this.ShowDialog();*/
-        }
-
-        #endregion
-
-        #region Class initializer methods
-
-        /// <summary>
-        /// initializes list of logs
-        /// </summary>
-        /// <returns>filled with values list of logs (if any log exists)</returns>
-        private List<GameLog> InitializeLogs()
-        {
-            List<GameLog> result = new List<GameLog>();
-
-            if (File.Exists(LOG_FILE_NAME))
-            {
-                using (StreamReader sr = new StreamReader(LOG_FILE_NAME))
-                {
-                    string line = "";
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        string[] values = line.Split(";");
-
-                        GameLog gl = new GameLog(values[0], values[1], Convert.ToDouble(values[2]), Convert.ToDouble(values[3]), Convert.ToDouble(values[4]));
-
-                        result.Add(gl);
-                    }
-                }
-            }
-
-            return result;
+            this.ShowDialog();
         }
 
         #endregion
@@ -171,19 +131,6 @@ namespace Kasyno
         #endregion
 
         #region Other methods
-        /// <summary>
-        /// method saves all logs from Logs field to the logs.txt file
-        /// </summary>
-        private void SaveStatisticsToFile()
-        {
-            using (StreamWriter sr = new StreamWriter(LOG_FILE_NAME))
-            {
-                foreach (var log in Logs)
-                {
-                    sr.WriteLine($"{log.Username};{log.GameName};{log.BalanceBefore};{log.Bet};{log.BalanceAfter}");
-                }
-            }
-        }
 
         /// <summary>
         /// checks whether user chose an option or not
@@ -240,22 +187,34 @@ namespace Kasyno
                 isWon = false;
             }
 
-            double balanceBeforeGame = User1.Money;
+            double balanceBeforeGame = User.AppUserDetails.Balance;
 
             if (isWon)
             {
-                User1.Money = User1.Money + bet;
+                User.AppUserDetails.Balance = User.AppUserDetails.Balance + bet;
                 MessageBox.Show($"You have won {bet}$!", "WIN", MessageBoxButton.OK);
             }
             else
             {
-                User1.Money = User1.Money - bet;
+                User.AppUserDetails.Balance = User.AppUserDetails.Balance - bet;
                 MessageBox.Show($"You have lost {bet}$!", "LOSE", MessageBoxButton.OK);
             }
 
-            Logs.Add(new GameLog(User1.Username, "Roulette", balanceBeforeGame, bet, User1.Money));
+            context.Users.Update(User);
+            context.SaveChanges();
+            User = context.Users.Include(u => u.AppUserDetails).FirstOrDefault(u => u.Id == User.Id);
 
-            LblMoney.Content = $"{User1.Money.ToString()}$";
+            History history = new History()
+            {
+                AppUserId = User.Id,
+                GameId = 1,
+                BetAmount = bet,
+                IsWon = isWon,
+            };
+
+            context.History.Add(history);
+            context.SaveChanges();
+            LblMoney.Content = $"{User.AppUserDetails.Balance}$";
         }
 
         #endregion

@@ -1,6 +1,5 @@
 ﻿using Kasyno.Entities;
 using Kasyno.Interfaces;
-using System.Collections.Generic;
 using System.Windows;
 
 namespace Kasyno
@@ -42,14 +41,14 @@ namespace Kasyno
                 WindowSlot window = new WindowSlot(User);
                 this.Hide();
                 window.ShowDialog();
-                this.Show();
+                this.ShowDialog();
             }
             else
             {
                 WindowRoulette window = new WindowRoulette(User);
                 this.Hide();
                 window.ShowDialog();
-                this.Show();
+                this.ShowDialog();
             }
         }
 
@@ -63,7 +62,7 @@ namespace Kasyno
             WindowUserSettings window = new WindowUserSettings(User);
             this.Hide();
             window.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
 
         private void BtnLogout_Click(object sender, RoutedEventArgs e)
