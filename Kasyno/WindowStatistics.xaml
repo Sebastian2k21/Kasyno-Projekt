@@ -10,6 +10,9 @@
         ResizeMode="NoResize"
         >
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Resources/backgound.png"/>
+        </Grid.Background>
         <DataGrid x:Name="DGdata" Margin="150,80,150,206"/>
 
     </Grid>

@@ -9,6 +9,9 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/backgound.png" Stretch="UniformToFill"/>
+        </Grid.Background>
         <TextBlock HorizontalAlignment="Left" Margin="185,20,0,0" Text="Username:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
         <TextBlock HorizontalAlignment="Left" Margin="185,20,0,0" Text="Username:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
         <TextBlock HorizontalAlignment="Left" Margin="185,89,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>

@@ -8,29 +8,33 @@
         Title="Roulette" Height="650" Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-    <Grid Background="#FF92989A">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/bakcground2.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="24*"/>
             <RowDefinition Height="293*"/>
         </Grid.RowDefinitions>
         <Rectangle x:Name="RctngRoulette" HorizontalAlignment="Center" Height="257" Margin="0,16,0,0" Grid.Row="1" Stroke="#FFFAFAFA" VerticalAlignment="Top" Width="256"/>
         <Label x:Name="LblRoulette" Content="" HorizontalAlignment="Center" Margin="0,118,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="24" FontFamily="Times New Roman" FontWeight="Bold" Height="38" Width="45"/>
-        <TextBlock HorizontalAlignment="Left" Margin="222,464,0,0" Text="Bet:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36" Grid.Row="1" Height="41" Width="64"/>
-        <TextBox x:Name="TbBet" HorizontalAlignment="Left" Margin="291,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="36" Grid.Row="1" Height="43"/>
-        <Button x:Name="BtnPlay" Content="Play" HorizontalAlignment="Left" Margin="599,376,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="123" FontSize="24" FontFamily="Times New Roman" FontWeight="Bold" Click="BtnPlay_Click"/>
-        <Label Content="Money:" HorizontalAlignment="Left" Margin="35,68,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Times New Roman"/>
-        <Label x:Name="LblMoney" Content="0$" HorizontalAlignment="Left" Margin="104,68,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Times New Roman"/>
-        <Label Content="Choose color:" HorizontalAlignment="Left" Margin="71,376,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" FontWeight="Bold" RenderTransformOrigin="0.371,0.557"/>
-        <RadioButton x:Name="RadioGreen" Content="Green" HorizontalAlignment="Left" Margin="308,393,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20"/>
-        <RadioButton x:Name="RadioRed" Content="Red" HorizontalAlignment="Left" Margin="397,393,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20"/>
-        <RadioButton x:Name="RadioBlack" Content="Black" HorizontalAlignment="Left" Margin="481,393,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20"/>
-        <Button x:Name="BtnBack" Content="Back" HorizontalAlignment="Left" Margin="599,309,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="123" FontSize="24" FontFamily="Times New Roman" FontWeight="Bold" Click="BtnBack_Click"/>
-        <Menu Margin="0,0,0,10">
-            <MenuItem Cursor="Hand" FontWeight="Normal" FontFamily="Times New Roman" FontSize="14" Header="File" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Left" Margin="182,519,0,0" Text="Bet:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36" Grid.Row="1" Height="41" Width="64" Panel.ZIndex="1"/>
+        <TextBox x:Name="TbBet" HorizontalAlignment="Left" Margin="251,519,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="36" Grid.Row="1" Height="43" Panel.ZIndex="1"/>
+        <Button x:Name="BtnPlay" Content="Play" HorizontalAlignment="Left" Margin="629,452,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="123" FontSize="24" FontFamily="Times New Roman" FontWeight="Bold" Click="BtnPlay_Click" Background="#FF525354" Foreground="White" Panel.ZIndex="1"/>
+        <Label Content="Money:" HorizontalAlignment="Left" Margin="5,368,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" FontFamily="Times New Roman" Panel.ZIndex="1"/>
+        <Label x:Name="LblMoney" Content="0$" HorizontalAlignment="Left" Margin="107,368,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" FontFamily="Times New Roman" Panel.ZIndex="1"/>
+        <Label Content="Choose color:" HorizontalAlignment="Left" Margin="120,460,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" FontWeight="Bold" RenderTransformOrigin="0.371,0.557" Panel.ZIndex="1"/>
+        <RadioButton x:Name="RadioGreen" VerticalContentAlignment="Center" Content="Green" HorizontalAlignment="Left" Margin="357,477,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" Panel.ZIndex="1"/>
+        <RadioButton x:Name="RadioRed" VerticalContentAlignment="Center" Content="Red" HorizontalAlignment="Left" Margin="446,477,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" Panel.ZIndex="1"/>
+        <RadioButton x:Name="RadioBlack" VerticalContentAlignment="Center" Content="Black" HorizontalAlignment="Left" Margin="530,477,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" Panel.ZIndex="1"/>
+        <Button x:Name="BtnBack" Content="Back" HorizontalAlignment="Left" Margin="629,515,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="123" FontSize="24" FontFamily="Times New Roman" FontWeight="Bold" Click="BtnBack_Click" Background="#FF525354" Foreground="White" Panel.ZIndex="1"/>
+        <Menu Margin="0,0,0,575" Background="#FF9B1313" Foreground="White" FontFamily="Times New Roman" FontSize="16" Grid.RowSpan="2">
+            <MenuItem Cursor="Hand" FontWeight="Normal" FontFamily="Times New Roman" FontSize="24" Header="File" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Center">
                 <MenuItem x:Name="MenuAbout" Header="About author" FontFamily="Times New Roman" FontSize="14" Click="MenuAbout_Click"/>
                 <MenuItem x:Name="MenuExit" Header="Exit" FontFamily="Times New Roman" FontSize="14" Click="MenuExit_Click"/>
             </MenuItem>
-            <MenuItem x:Name="MenuStatistics" Cursor="Hand" FontFamily="Times New Roman" FontSize="14" Header="Statistics" Margin="0,5,0,0" Click="MenuStatistics_Click"/>
+            <MenuItem x:Name="MenuStatistics" Cursor="Hand" FontFamily="Times New Roman" FontSize="24" Header="Statistics" Margin="0,5,0,0" Click="MenuStatistics_Click"/>
         </Menu>
+        <Rectangle Margin="0,358,0,0" Fill="#BF9B1313" Grid.Row="1"/>
     </Grid>
 </Window>

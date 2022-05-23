@@ -10,12 +10,12 @@
         ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Resources/bakcground2.jpg"/>
+            <ImageBrush ImageSource="/Resources/backgound.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Button x:Name="BtnGoIn" Content="Go in" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top" FontSize="48" Height="105" Width="282" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnGoIn_Click"/>
-        <Button x:Name="BtnAuthor" Content="Author" HorizontalAlignment="Center" Margin="0,292,0,0" VerticalAlignment="Top" FontSize="48" Height="105" Width="282" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnAuthor_Click"/>
-        <Button x:Name="BtnExit" Content="Exit" HorizontalAlignment="Center" Margin="0,439,0,0" VerticalAlignment="Top" FontSize="48" Height="105" Width="282" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnExit_Click"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,47,0,0" Text="Welcome in the Casino Game" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" FontFamily="Times New Roman" Foreground="White" Background="#FF7D3131"/>
+        <Button x:Name="BtnGoIn" Content="Go in" HorizontalAlignment="Right" Margin="0,187,204,0" VerticalAlignment="Top" FontSize="48" Height="105" Width="400" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF57AA12" Foreground="White" Click="BtnGoIn_Click"/>
+        <Button x:Name="BtnAuthor" Content="Author" HorizontalAlignment="Left" Margin="39,333,0,0" VerticalAlignment="Top" FontSize="48" Height="105" Width="282" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnAuthor_Click"/>
+        <Button x:Name="BtnExit" Content="Exit" HorizontalAlignment="Left" Margin="465,333,0,0" VerticalAlignment="Top" FontSize="48" Height="105" Width="282" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnExit_Click"/>
+        <TextBlock HorizontalAlignment="Center" Text="Welcome in the Casino Game" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="72" FontWeight="Bold" FontFamily="Times New Roman" Foreground="#FF080000" Background="#7FFFFFFF" Height="91" Width="800" TextAlignment="Center"/>
 
     </Grid>
 </Window>

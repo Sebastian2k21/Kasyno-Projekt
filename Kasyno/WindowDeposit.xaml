@@ -9,6 +9,9 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Resources/backgound.png"/>
+        </Grid.Background>
         <Button x:Name="BtnBack" Content="Back to user settings" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="468" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnBack_Click"/>
         <Button x:Name="BtnDeposit" Content="Make a deposit" HorizontalAlignment="Center" Margin="0,202,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="396" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnDeposit_Click"/>
         <TextBox x:Name="TbDeposit" HorizontalAlignment="Center" Margin="0,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="36"/>

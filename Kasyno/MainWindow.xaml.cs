@@ -19,6 +19,10 @@ namespace Kasyno
             context.History.Load();
             Seed();
         }
+
+        /// <summary>
+        /// zapelnia baze danych
+        /// </summary>
         public void Seed()
         {
             #region Games
@@ -44,6 +48,10 @@ namespace Kasyno
             }
             #endregion
         }
+
+        /// <summary>
+        /// konstruktor
+        /// </summary>
         public MainWindow()
         {
             CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");

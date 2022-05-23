@@ -22,17 +22,20 @@ namespace Kasyno
             User = user;
             InitializeLogs(gameId);
 
-            var newLog = new StatisticsData()
+            for (int i = 0; i < Logs.Count; i++)
             {
-                WasGameWon = Logs[0].IsWon ? "Won" : "Lost",
-                BetAmount = Logs[0].BetAmount,
-                Game = context.Games.Where(g => g.Id == Logs[0].GameId).Select(g => g.Name).ToList()[0]
-            };
+                var newLog = new StatisticsData()
+                {
+                    WasGameWon = Logs[i].IsWon ? "Won" : "Lost",
+                    BetAmount = Logs[i].BetAmount,
+                    Game = context.Games.Where(g => g.Id == Logs[i].GameId).Select(g => g.Name).ToList()[i]
+                };
 
-            List<StatisticsData> newLogs = new List<StatisticsData>();
-            newLogs.Add(newLog);
+                List<StatisticsData> newLogs = new List<StatisticsData>();
+                newLogs.Add(newLog);
 
-            DGdata.ItemsSource = newLogs;
+                DGdata.ItemsSource = newLogs;
+            }
         }
 
         private void InitializeLogs(int gameId)

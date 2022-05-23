@@ -9,8 +9,11 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="158,78,0,0" Text="Login:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
-        <TextBlock HorizontalAlignment="Left" Margin="158,135,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE70F0F" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/backgound.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" Margin="158,78,0,0" Text="Login:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="158,135,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontFamily="Times New Roman" FontSize="36"/>
         <TextBox x:Name="TbLogin" HorizontalAlignment="Left" Margin="339,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="36"/>
         <Button x:Name="BtnLogIn" Content="Log in" HorizontalAlignment="Left" Margin="158,262,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="235" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnLogin_Click"/>
         <Button x:Name="BtnRegister" Content="Register" HorizontalAlignment="Left" Margin="432,262,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="235" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnRegister_Click"/>
