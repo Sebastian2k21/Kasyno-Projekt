@@ -2,6 +2,9 @@
 
 namespace Kasyno.Entities
 {
+    /// <summary>
+    /// encja uzytkownika
+    /// </summary>
     public class AppUser
     {
         public int Id { get; set; }

@@ -8,9 +8,16 @@ using System.Windows;
 
 namespace Kasyno
 {
+    /// <summary>
+    /// klasa głównego okna
+    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly CasinoDbContext context = new CasinoDbContext();
+
+        /// <summary>
+        /// inicjalizacja bazy danych
+        /// </summary>
         public void InitializeDatabase()
         {
             context.Users.Load();
@@ -63,6 +70,11 @@ namespace Kasyno
             }
         }
 
+        /// <summary>
+        /// klikniecie przycisku Go
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnGoIn_Click(object sender, RoutedEventArgs e)
         {
             WindowLogin window = new WindowLogin();
@@ -70,6 +82,12 @@ namespace Kasyno
             window.ShowDialog();
             this.Close();
         }
+
+        /// <summary>
+        /// klikniecie przycisku Author
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAuthor_Click(object sender, RoutedEventArgs e)
         {
             WindowAuthor window = new WindowAuthor();
@@ -77,6 +95,12 @@ namespace Kasyno
             window.ShowDialog();
             this.Show();
         }
+
+        /// <summary>
+        /// klikniecie przycisku Exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {

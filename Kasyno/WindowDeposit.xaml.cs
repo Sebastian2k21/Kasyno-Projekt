@@ -6,10 +6,18 @@ using System.Windows;
 
 namespace Kasyno
 {
+    /// <summary>
+    /// klasa okna depozytu
+    /// </summary>
     public partial class WindowDeposit : Window
     {
         private readonly CasinoDbContext context = new CasinoDbContext();
         public AppUser User { get; set; }
+
+        /// <summary>
+        /// konstruktor
+        /// </summary>
+        /// <param name="user"></param>
         public WindowDeposit(AppUser user)
         {
             InitializeComponent();
@@ -17,6 +25,12 @@ namespace Kasyno
             User = user;
         }
 
+        /// <summary>
+        /// sprawdza czy kwota wprowadzona przez uzytkownika jest poprawna
+        /// </summary>
+        /// <param name="value">wartosc liczbowa jako napis</param>
+        /// <param name="number">zwraca wartosc przez referencje jako wartosc liczbowa (jesli jest liczba)</param>
+        /// <returns>true jesli jest liczba, w przeciwnym razie false</returns>
         private bool ValidateData(string value, out double number)
         {
             number = 0;
@@ -41,6 +55,11 @@ namespace Kasyno
             return true;
         }
 
+        /// <summary>
+        /// po kliknieciu przycisku Deposit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnDeposit_Click(object sender, RoutedEventArgs e)
         {
             string value = TbDeposit.Text;
@@ -60,6 +79,11 @@ namespace Kasyno
             }
         }
 
+        /// <summary>
+        /// po kliknieciu przycisku Back
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

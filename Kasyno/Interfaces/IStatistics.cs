@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Kasyno.Interfaces
 {
+    /// <summary>
+    /// interfejs statystyk
+    /// </summary>
     interface IStatistics
     {
         /// <summary>
-        /// it displays window with game statistics
+        /// otwiera okno ze statystykami
         /// </summary>
         void ShowStatistics();
     }

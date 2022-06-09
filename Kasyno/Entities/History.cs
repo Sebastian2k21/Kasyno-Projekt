@@ -1,5 +1,8 @@
 ﻿namespace Kasyno.Entities
 {
+    /// <summary>
+    /// encja historii pojedynczej gry
+    /// </summary>
     public class History
     {
         public int Id { get; set; }

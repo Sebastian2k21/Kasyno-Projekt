@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Kasyno.EntityConfigurations
 {
+    /// <summary>
+    /// konfiguracja encji uzytkownika
+    /// </summary>
     class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
     {
         public void Configure(EntityTypeBuilder<AppUser> builder)

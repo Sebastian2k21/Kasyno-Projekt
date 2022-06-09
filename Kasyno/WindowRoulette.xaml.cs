@@ -8,10 +8,18 @@ using System.Windows.Media;
 
 namespace Kasyno
 {
+    /// <summary>
+    /// klasa okna ruletki
+    /// </summary>
     public partial class WindowRoulette : Window, IGame, IStatistics
     {
         private readonly CasinoDbContext context = new CasinoDbContext();
+
         public AppUser User { get; set; }
+        /// <summary>
+        /// konstruktor
+        /// </summary>
+        /// <param name="user">zalogowany uzytkownik</param>
         public WindowRoulette(AppUser user)
         {
             User = user;
@@ -97,6 +105,11 @@ namespace Kasyno
         #endregion
 
         #region Buttons
+        /// <summary>
+        /// po kliknieciu przycisku Menu (otwiera autora)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuAbout_Click(object sender, RoutedEventArgs e)
         {
             WindowAuthor window = new WindowAuthor();
@@ -106,15 +119,32 @@ namespace Kasyno
             this.ShowDialog();
         }
 
+        /// <summary>
+        /// po kliknieciu przycisku Exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
+
+        /// <summary>
+        /// po kliknieciu przycisku Statistics (pokazuje je)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuStatistics_Click(object sender, RoutedEventArgs e)
         {
             ShowStatistics();
         }
 
+        /// <summary>
+        /// po kliknieciu przycisku Play (zaczyna sie gra)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
             if (CheckUserBalance()) // if entered value was correct and user has enough money
@@ -122,6 +152,11 @@ namespace Kasyno
                 Play();
             }
         }
+        /// <summary>
+        /// po kliknieciu przycisku Back
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -133,9 +168,9 @@ namespace Kasyno
         #region Other methods
 
         /// <summary>
-        /// checks whether user chose an option or not
+        /// sprawdza czy uzytkownik wybral opcje czy nie
         /// </summary>
-        /// <returns>number of an option</returns>
+        /// <returns>numer opcji</returns>
         private int CheckOption()
         {
             if (RadioBlack.IsChecked == false && RadioGreen.IsChecked == false && RadioRed.IsChecked == false)
@@ -158,10 +193,10 @@ namespace Kasyno
         }
 
         /// <summary>
-        /// checks whether game is won or not
+        /// sprawdza czy uzytkownik wygral
         /// </summary>
-        /// <param name="number">random number on roulette</param>
-        /// <param name="option">color value regarding to chosen radio button</param>
+        /// <param name="number">losowa liczba na ruletce</param>
+        /// <param name="option">numer wybranego koloru</param>
         private void IsGameWon(int number, int option)
         {
             bool isWon = false;

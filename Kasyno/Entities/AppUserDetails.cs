@@ -1,5 +1,8 @@
 ﻿namespace Kasyno.Entities
 {
+    /// <summary>
+    /// encja szczegolowych informacji o uzytkowniku
+    /// </summary>
     public class AppUserDetails
     {
         public int Id { get; set; }

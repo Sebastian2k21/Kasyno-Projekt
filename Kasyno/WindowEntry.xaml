@@ -17,12 +17,12 @@
         </Grid.Background>
         <RadioButton x:Name="BtnChoiceRoulette" VerticalContentAlignment="Center" Content="Roulette" HorizontalAlignment="Left" Margin="616,201,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontWeight="Bold" FontSize="36" Foreground="Black" Panel.ZIndex="1"/>
         <RadioButton x:Name="BtnChoiceSlot" VerticalContentAlignment="Center" Content="Slot" HorizontalAlignment="Left" Margin="651,134,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontWeight="Bold" FontSize="36" Foreground="Black" Panel.ZIndex="1"/>
-        <Button x:Name="BtnStart" Content="Start" HorizontalAlignment="Left" Margin="602,278,0,0" VerticalAlignment="Top" FontSize="48" Height="65" Width="178" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnStart_Click" Panel.ZIndex="1"/>
-        <Button x:Name="BtnStatistics" Content="Show statistics" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="326" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnStatistics_Click"/>
+        <Button x:Name="BtnStart" Content="Start" HorizontalAlignment="Left" Margin="602,326,0,0" VerticalAlignment="Top" FontSize="48" Height="65" Width="178" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnStart_Click" Panel.ZIndex="1"/>
+        <Button x:Name="BtnStatistics" Content="Show statistics" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" FontSize="48" Height="72" Width="326" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnStatistics_Click"/>
         <TextBlock x:Name="LblLogin" HorizontalAlignment="Left" Margin="158,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor=""/>
         <Image x:Name="ImgProfile" HorizontalAlignment="Left" Height="128" Margin="10,10,0,0" VerticalAlignment="Top" Width="128" Source="/Resources/profile.png" MouseLeftButtonDown="ImgProfile_MouseLeftButtonDown"/>
-        <Button x:Name="BtnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="48" Height="78" Width="174" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnLogout_Click"/>
-        <Rectangle Margin="581,0,0,0" Fill="#BF9B1313"/>
+        <Button x:Name="BtnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" FontSize="48" Height="78" Width="174" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnLogout_Click"/>
+        <Rectangle Margin="581,0,0,0" Fill="#BFC3C3C3"/>
 
     </Grid>
 </Window>

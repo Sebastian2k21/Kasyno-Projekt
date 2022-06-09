@@ -12,13 +12,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/backgound.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Left" Margin="14,41,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2F5F08" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" Panel.ZIndex="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="14,89,0,0" Text="Surname:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2F5F08" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" RenderTransformOrigin="0.497,0.82" Panel.ZIndex="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="14,139,0,0" Text="Subject:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2F5F08" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,27,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2F5F08" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,63,0,0" Text="Surname:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2F5F08" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" RenderTransformOrigin="0.497,0.82" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2F5F08" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman" Panel.ZIndex="1"><Run Text="Indeks"/><Run Text=":"/></TextBlock>
         <Button x:Name="BtnBack" Content="Back to main menu" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" FontSize="36" Height="93" Width="419" FontWeight="Bold" FontFamily="Times New Roman" Background="#FF525354" Foreground="White" Click="BtnBack_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="87,41,0,0" Text="Sebastian" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Panel.ZIndex="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="120,89,0,0" Text="Żądło" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor="" Panel.ZIndex="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="104,139,0,0" Text="Wprowadzenie do programowania" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor="" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="86,27,0,0" Text="Sebastian" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="116,63,0,0" Text="Żądło" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor="" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="92,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" FontWeight="Normal" FontFamily="Times New Roman" Cursor="" Panel.ZIndex="1"><Run Language="pl-pl" Text="13877"/></TextBlock>
         <Rectangle HorizontalAlignment="Center" Height="181" VerticalAlignment="Top" Width="802" Fill="#4CFFFFFF"/>
 
     </Grid>

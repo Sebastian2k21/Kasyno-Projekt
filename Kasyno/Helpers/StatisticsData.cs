@@ -1,6 +1,9 @@
 ﻿namespace Kasyno.Helpers
 {
-    class StatisticsData
+    /// <summary>
+    /// klasa posiada wszystkie informacje pojedynczego wiersza statystyk
+    /// </summary>
+    public class StatisticsData
     {
         public double BetAmount { get; set; }
 

@@ -7,10 +7,18 @@ using System.Windows;
 
 namespace Kasyno
 {
+    /// <summary>
+    /// klasa okna slotow
+    /// </summary>
     public partial class WindowSlot : Window, IGame, IStatistics
     {
         private readonly CasinoDbContext context = new CasinoDbContext();
         public AppUser User { get; set; }
+
+        /// <summary>
+        /// konstruktor
+        /// </summary>
+        /// <param name="user"></param>
         public WindowSlot(AppUser user)
         {
             User = user;
@@ -106,6 +114,11 @@ namespace Kasyno
         #endregion
 
         #region Buttons
+        /// <summary>
+        /// po kliknieciu przycisku Menu (otwiera sie okno z autorem)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuAbout_Click(object sender, RoutedEventArgs e)
         {
             WindowAuthor window = new WindowAuthor();
@@ -115,15 +128,32 @@ namespace Kasyno
             this.ShowDialog();
         }
 
+        /// <summary>
+        ///  po kliknieciu przycisku Exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
 
+        /// <summary>
+        /// po kliknieciu przycisku Statistics 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void MenuStatistics_Click(object sender, RoutedEventArgs e)
         {
             ShowStatistics();
         }
+
+        /// <summary>
+        /// po kliknieciu przycisku Play (zaczyna sie gra jesli uzytkownik ma pieniadze)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
             if (CheckUserBalance()) // if entered value was correct and user has enough money
@@ -131,6 +161,12 @@ namespace Kasyno
                 Play();
             }
         }
+
+        /// <summary>
+        /// po kliknieciu przycisku Back
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -141,12 +177,12 @@ namespace Kasyno
         #region Other methods
 
         /// <summary>
-        /// checks whether user won money or not
+        /// sprawdza czy uzytkownik wygral czy nie
         /// </summary>
-        /// <param name="left">left number</param>
-        /// <param name="center">middle number</param>
-        /// <param name="right">right number</param>
-        /// <returns></returns>
+        /// <param name="left">lewa liczba</param>
+        /// <param name="center">srodkowa liczba</param>
+        /// <param name="right">prawa liczba</param>
+        /// <returns>true jesli uzytkownik wygral, false w przeciwnym azie</returns>
         public bool IsGameWon(int left, int center, int right)
         {
             if (left == right && left == center)

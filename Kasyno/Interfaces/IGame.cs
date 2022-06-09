@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kasyno
+﻿namespace Kasyno
 {
+    /// <summary>
+    /// interfejs gry (ruletka/sloty)
+    /// </summary>
     interface IGame
     {
         /// <summary>
-        /// game starts here
+        /// zaczyna gre
         /// </summary>
         void Play();
 
         /// <summary>
-        /// checks whether user entered valid bet or not and if user has enough amount of money
+        /// sprawdza czy uzytkownik ma odpowiednia ilosc piniedzy do postawienia zakladu
         /// </summary>
-        /// <returns>true if bet is valid, false otherwise</returns>
+        /// <returns>true jesli ma wystarczajaca ilosc pieniedze, false w przeciwnym razie</returns>
         bool CheckUserBalance();
     }
 }

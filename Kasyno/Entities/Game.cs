@@ -2,6 +2,9 @@
 
 namespace Kasyno.Entities
 {
+    /// <summary>
+    /// encja gry
+    /// </summary>
     public class Game
     {
         public int Id { get; set; }

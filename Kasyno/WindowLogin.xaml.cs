@@ -6,14 +6,27 @@ using System.Windows;
 
 namespace Kasyno
 {
+    /// <summary>
+    /// klasa okna logowania
+    /// </summary>
     public partial class WindowLogin : Window
     {
         private readonly CasinoDbContext context = new CasinoDbContext();
+
+        /// <summary>
+        /// konstruktor
+        /// </summary>
         public WindowLogin()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// sprawdza czy pola sa puste
+        /// </summary>
+        /// <param name="username">pole uzytkownika</param>
+        /// <param name="password">pole z haslem</param>
+        /// <returns>true jesli ktores z pol jest puste, false w przeciwnym razie</returns>
         private bool AreFieldsEmpty(string username, string password)
         {
             if (string.IsNullOrWhiteSpace(username) ||
@@ -23,6 +36,12 @@ namespace Kasyno
             return false;
         }
 
+        /// <summary>
+        /// sprawdza czy podane haslo jest dobre
+        /// </summary>
+        /// <param name="user">login uzytkownika</param>
+        /// <param name="enteredPassword">wprowadzone haslo</param>
+        /// <returns>true jesli haslo jest poprawne, false w przeciwnym razie</returns>
         private bool ValidatePassword(AppUser user, string enteredPassword)
         {
             string hashedPassword = Encryptor.Sha256(enteredPassword);
@@ -35,6 +54,12 @@ namespace Kasyno
             return false;
         }
 
+        /// <summary>
+        /// metoda loguje nas do programu
+        /// </summary>
+        /// <param name="username">login</param>
+        /// <param name="password">hasło</param>
+        /// <returns>w razie sukscesu zwraca uzytkownika, w przeciwnym razie null</returns>
         private AppUser Login(string username, string password)
         {
             if (AreFieldsEmpty(username, password))
@@ -64,6 +89,11 @@ namespace Kasyno
             return null;
         }
 
+        /// <summary>
+        /// po kliknieciu w przycisk Login (zaczyna sie walidacja)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             string username = TbLogin.Text;
@@ -80,6 +110,11 @@ namespace Kasyno
             }
         }
 
+        /// <summary>
+        /// po kliknieciu w przycisk Register (przejscie do okna rejestracji)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
             WindowRegister window = new WindowRegister();

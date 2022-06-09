@@ -4,8 +4,16 @@ using System.Text;
 
 namespace Kasyno.Helpers
 {
-    class Encryptor
+    /// <summary>
+    /// klasa szyfrujaca
+    /// </summary>
+    public class Encryptor
     {
+        /// <summary>
+        /// metoda szyfruje algorytmem SHA256
+        /// </summary>
+        /// <param name="randomString">napis do zaszyfrowania</param>
+        /// <returns>zaszyfrowany napis</returns>
         public static string Sha256(string randomString)
         {
             var crypt = new SHA256Managed();

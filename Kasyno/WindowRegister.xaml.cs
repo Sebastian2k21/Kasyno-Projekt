@@ -6,14 +6,26 @@ using System.Windows;
 
 namespace Kasyno
 {
+    /// <summary>
+    /// klasa okna rejestracji
+    /// </summary>
     public partial class WindowRegister : Window
     {
         private readonly CasinoDbContext context = new CasinoDbContext();
+
+        /// <summary>
+        /// konstruktor
+        /// </summary>
         public WindowRegister()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// sprawdza czy juz istnieje taki login w bazie
+        /// </summary>
+        /// <param name="username">login do sprawdzenia</param>
+        /// <returns>true jesli istnieje, false w przeciwnym razie</returns>
         private bool DoesLoginExist(string username)
         {
             var user = context.Users.FirstOrDefault(u => u.Login == username); // predicate -> wyrazenie, ktore zwraca true lub false
@@ -24,6 +36,16 @@ namespace Kasyno
             return false;
         }
 
+        /// <summary>
+        /// sprawdza czy ktorekolwiek z pol jest puste
+        /// </summary>
+        /// <param name="username">login</param>
+        /// <param name="password">haslo</param>
+        /// <param name="confirmPassword">potwierdzenie hasla</param>
+        /// <param name="firstName">imie</param>
+        /// <param name="surname">nazwisko</param>
+        /// <param name="initialDeposit">depozyt</param>
+        /// <returns>true, jesli ktores z pol jest puste, false w przeciwnym razie</returns>
         private bool AreFieldsEmpty(string username, string password, string confirmPassword, string firstName, string surname, string initialDeposit)
         {
             if (string.IsNullOrWhiteSpace(username) ||
@@ -37,6 +59,16 @@ namespace Kasyno
             return false;
         }
 
+        /// <summary>
+        /// waliduje dane
+        /// </summary>
+        /// <param name="username">login</param>
+        /// <param name="password">haslo</param>
+        /// <param name="confirmPassword">potwierdzenie hasla</param>
+        /// <param name="firstName">imie</param>
+        /// <param name="surname">nazwisko</param>
+        /// <param name="initialDeposit">depozyt</param>
+        /// <returns>zwraca true jesli pomyslnie zwalidowano, false w przeciwnym razie</returns>
         private bool ValidateData(string username, string password, string confirmPassword, string firstName, string surname, string initialDeposit)
         {
             if (DoesLoginExist(username))
@@ -74,6 +106,14 @@ namespace Kasyno
             return true;
         }
 
+        /// <summary>
+        /// rejestruje uzytkownika do bazy danych
+        /// </summary>
+        /// <param name="username">login</param>
+        /// <param name="hashedPassword">zaszyfrowane haslo</param>
+        /// <param name="firstName">imie</param>
+        /// <param name="surname">nazwisko</param>
+        /// <param name="initialDeposit">depozyt</param>
         private void Register(string username, string hashedPassword, string firstName, string surname, double initialDeposit)
         {
             AppUser user = new AppUser()
@@ -92,6 +132,11 @@ namespace Kasyno
             context.SaveChanges();
         }
 
+        /// <summary>
+        /// po kliknieciu przycisku Register (wywolywane jest hashowanie hasla i rejestracja)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
             string username = TbUsername.Text;
